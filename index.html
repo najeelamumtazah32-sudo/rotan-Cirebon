@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <meta name="description" content="Furnitur rotan handmade dari Cirebon, Indonesia. Jelajahi koleksi, pilih varian, dan hitung estimasi pengiriman.">
+  <title>RIDWAN RATTAN — Woven to live well</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement-bar">
+    <span data-i18n="announcement">Dianyam dengan sabar di Cirebon, dikirim ke seluruh dunia.</span>
+    <span class="announcement-dot"></span>
+    <span data-i18n="announcementTag">Pesanan grosir disambut</span>
+  </div>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg container-xl" aria-label="Main navigation">
+      <a class="navbar-brand brand-lockup" href="#home" aria-label="Raya Rattan home">
+        <svg class="brand-mark" viewBox="0 0 52 52" role="img" aria-label="Raya Rattan logo">
+          <circle cx="26" cy="26" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M15 36V16h10c6 0 10 3 10 8 0 4-2 6-6 7l7 5M15 26h11c3 0 5-1 5-3s-2-3-5-3H15M21 36V16m7 20V16m7 20V16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35"/>
+        </svg>
+        <span class="brand-name">RIDWAN<span>RATTAN</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#collection" data-i18n="navCollection">Koleksi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#story" data-i18n="navStory">Cerita kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shipping" data-i18n="navShipping">Pengiriman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-tools">
+          <select class="language-select" id="languageToggle" aria-label="Change language">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+            <option value="ja">JA</option>
+            <option value="nl">NL</option>
+            <option value="ms">MS</option>
+          </select>
+          <button class="nav-cart-button" id="cartToggle" type="button" aria-label="Open shopping cart" data-i18n-aria-label="cartOpen">
+            <i class="bi bi-bag" aria-hidden="true"></i><span data-i18n="cartLabel">Keranjang</span>
+            <span class="cart-count" id="cartCount" aria-label="0 items">0</span>
+          </button>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme">
+            <i class="bi bi-moon-stars" id="themeIcon" aria-hidden="true"></i>
+          </button>
+          <a class="nav-cta" href="#quote"><span data-i18n="navQuote">Minta penawaran</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section" id="home">
+      <div class="container-xl hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="heroEyebrow">ROTAN PILIHAN · CIREBON, INDONESIA</span></div>
+          <h1 data-i18n="heroTitle">A little more<br><em>room to breathe.</em></h1>
+          <p class="hero-description" data-i18n="heroDescription">Kehangatan alam, dianyam tangan para perajin Cirebon untuk rumah yang terasa lebih seperti rumah.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#collection"><span data-i18n="exploreCollection">Jelajahi koleksi</span><i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
+            <div class="hero-note"><span class="note-stars">★★★★★</span><span data-i18n="heroNote">Dibuat dengan tangan, sejak 1998</span></div>
+          </div>
+          <div class="hero-stats">
+            <div><strong>26<span>+</span></strong><small data-i18n="statYears">tahun merajut cerita</small></div>
+            <div><strong>4</strong><small data-i18n="statCountries">negara tujuan ekspor</small></div>
+            <div><strong>100<span>%</span></strong><small data-i18n="statHandmade">buatan tangan</small></div>
+          </div>
+          <span class="hero-stamp" aria-hidden="true"><span>MADE SLOWLY</span><b>✳</b><span>MADE TO LAST</span></span>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src="https://images.pexels.com/photos/11888487/pexels-photo-11888487.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Sofa dan kursi rotan di area teras yang hangat">
+            <div class="image-caption"><span data-i18n="heroImageCaption">Koleksi Sora — sudut santai, ritme pelan.</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></div>
+          </div>
+          <div class="floating-note"><span class="woven-icon"><i class="bi bi-flower1" aria-hidden="true"></i></span><span data-i18n="floatingNote">Serat alami.<br>Sentuhan personal.</span></div>
+          <div class="hero-image-index">01 <span>/</span> 04</div>
+        </div>
+      </div>
+      <div class="hero-bottom container-xl"><span data-i18n="scrollHint">GULIR UNTUK MENJELAJAH</span><span class="scroll-line"></span><span>06°43′ LS &nbsp; 108°34′ BT</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Brand values">
+      <div class="ticker-track" aria-hidden="true">
+        <span>GROWN WITH NATURE <i>✳</i> WOVEN BY HAND <i>✳</i> MADE IN CIREBON <i>✳</i> DESIGNED TO LAST <i>✳</i> GROWN WITH NATURE <i>✳</i> WOVEN BY HAND <i>✳</i> MADE IN CIREBON <i>✳</i> DESIGNED TO LAST <i>✳</i></span>
+      </div>
+    </section>
+
+    <section class="collection-section section-space" id="collection">
+      <div class="container-xl">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="collectionEyebrow">PILIHAN DARI BENGKEL KAMI</span></div>
+            <h2 data-i18n="collectionTitle">Benda baik,<br><em>untuk waktu yang lama.</em></h2></div>
+          <p data-i18n="collectionDescription">Setiap helai punya karakter sendiri. Temukan bentuk yang cocok untuk ruang dan ritme Anda.</p>
+        </div>
+        <div class="collection-toolbar">
+          <span id="productCount" class="product-count"></span>
+          <div class="filter-group" role="group" aria-label="Filter products">
+            <button type="button" class="filter-button active" data-filter="all" data-i18n="filterAll">Semua</button>
+            <button type="button" class="filter-button" data-filter="seating" data-i18n="filterSeating">Kursi</button>
+            <button type="button" class="filter-button" data-filter="lighting" data-i18n="filterLighting">Lampu</button>
+            <button type="button" class="filter-button" data-filter="living" data-i18n="filterLiving">Rumah</button>
+          </div>
+          <span class="collection-order" data-i18n="collectionOrder">EDISI 01 — NATURAL LIVING</span>
+        </div>
+        <div class="collection-search-row">
+          <label class="product-search">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <input id="productSearch" type="search" data-i18n-placeholder="productSearchPlaceholder" placeholder="Cari nama atau jenis produk..." aria-label="Search products" data-i18n-aria-label="productSearchLabel">
+          </label>
+          <span id="cartFeedback" class="cart-feedback" role="status" aria-live="polite"></span>
+        </div>
+        <div class="row g-4 product-grid" id="productGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="container-xl story-grid">
+        <div class="story-images">
+          <img class="story-image-main" src="https://images.pexels.com/photos/27975920/pexels-photo-27975920.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=850" alt="Set kursi rotan anyaman untuk teras">
+          <img class="story-image-small" src="https://images.pexels.com/photos/9173943/pexels-photo-9173943.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="Keranjang dan aksesori rotan anyaman tangan">
+          <div class="story-image-label"><span>06°43′</span><small>CIREBON<br>WEST JAVA</small></div>
+        </div>
+        <div class="story-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="storyEyebrow">DARI TANGAN KE TANGAN</span></div>
+          <h2 data-i18n="storyTitle">Kami percaya<br>pada <em>hal-hal alami.</em></h2>
+          <p data-i18n="storyParagraph">Di sudut Cirebon, rotan bukan sekadar bahan. Ia adalah cerita tentang tangan-tangan terampil, tentang belajar sabar, dan benda yang dibuat untuk menemani hidup—bukan sekadar mengisinya.</p>
+          <a href="#faq" class="text-link"><span data-i18n="storyLink">Kenali cara kami bekerja</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <div class="craft-note"><span class="craft-number">01</span><span data-i18n="craftCaption">Dipanen bijak. Dianyam cermat. Dikirim dengan bangga.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section section-space" id="quote">
+      <div class="container-xl quote-layout">
+        <div class="quote-intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="quoteEyebrow">PENAWARAN, TANPA TEBAK-TEBAKAN</span></div>
+          <h2 data-i18n="quoteTitle">Ruang Anda,<br><em>hitungannya jelas.</em></h2>
+          <p data-i18n="quoteDescription">Pilih produk, tentukan jumlah, lalu lihat harga, ongkir, dan perkiraan waktu tiba secara langsung.</p>
+          <div class="quote-assurance"><i class="bi bi-check2-circle" aria-hidden="true"></i><span data-i18n="quoteAssurance">Harga produk dan estimasi diperbarui otomatis.</span></div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-card-head"><span class="quote-card-mark"><i class="bi bi-calculator" aria-hidden="true"></i></span><div><h3 data-i18n="calculatorTitle">Kalkulator pesanan</h3><span data-i18n="calculatorSubtitle">Estimasi instan untuk rencana Anda</span></div><span class="live-pill"><i></i><span data-i18n="live">LANGSUNG</span></span></div>
+          <form id="quoteForm">
+            <div class="form-row">
+              <label class="form-label" for="productSelect" data-i18n="productLabel">PILIH PRODUK</label>
+              <select id="productSelect" class="form-select" required></select>
+            </div>
+            <div class="form-row two-columns">
+              <div><label class="form-label" for="variantSelect" data-i18n="variantLabel">VARIAN</label><select id="variantSelect" class="form-select" required></select></div>
+              <div><label class="form-label" for="quantityInput" data-i18n="quantityLabel">JUMLAH</label><div class="quantity-control"><button type="button" id="quantityMinus" aria-label="Decrease quantity">−</button><input id="quantityInput" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" id="quantityPlus" aria-label="Increase quantity">+</button></div></div>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="destinationSelect" data-i18n="destinationLabel">KIRIM KE</label>
+              <select id="destinationSelect" class="form-select"></select>
+            </div>
+          </form>
+          <div class="quote-breakdown" aria-live="polite">
+            <div><span data-i18n="unitPrice">Harga satuan</span><strong id="unitPrice">—</strong></div>
+            <div><span data-i18n="shippingCost">Estimasi ongkir</span><strong id="shippingCost">—</strong></div>
+            <div class="delivery-line"><span><i class="bi bi-box-seam" aria-hidden="true"></i><span data-i18n="deliveryEstimate">Perkiraan tiba</span></span><strong id="deliveryEstimate">—</strong></div>
+            <div class="total-line"><span data-i18n="totalPrice">Total estimasi</span><strong id="totalPrice">—</strong></div>
+          </div>
+          <p class="quote-disclaimer" data-i18n="quoteDisclaimer">* Estimasi ongkir untuk perencanaan awal. Harga final dikonfirmasi tim kami berdasarkan ukuran dan alamat lengkap.</p>
+          <a class="quote-submit" id="whatsappLink" href="https://wa.me/?text=Hello%20Raya%20Rattan" target="_blank" rel="noopener noreferrer"><span data-i18n="contactForOrder">Tanyakan pesanan ini</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shipping-section" id="shipping">
+      <div class="container-xl shipping-layout">
+        <div class="shipping-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="shippingEyebrow">DARI CIREBON, MENUJU ANDA</span></div>
+          <div class="shipping-heading"><h2 data-i18n="shippingTitle">Jauh bukan berarti<br><em>tak terjangkau.</em></h2><p data-i18n="shippingDescription">Kami mengirim karya tangan kami dengan aman ke berbagai penjuru. Pilih tujuan di kalkulator untuk melihat estimasi.</p></div>
+          <div class="shipping-facts">
+            <div><span class="shipping-icon"><i class="bi bi-globe2" aria-hidden="true"></i></span><strong>4<span>+</span></strong><small data-i18n="shippingCountries">negara tujuan</small></div>
+            <div><span class="shipping-icon"><i class="bi bi-box2-heart" aria-hidden="true"></i></span><strong data-i18n="careful">Cermat</strong><small data-i18n="shippingPacking">dikemas untuk perjalanan</small></div>
+            <div><span class="shipping-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span><strong>7–28</strong><small data-i18n="shippingDays">hari kerja, tergantung tujuan</small></div>
+          </div>
+        </div>
+        <div class="map-panel">
+          <form id="mapSearchForm" class="map-search-form">
+            <label class="visually-hidden" for="mapSearchInput" data-i18n="mapSearchLabel">Cari daerah atau negara</label>
+            <input id="mapSearchInput" type="search" data-i18n-placeholder="mapSearchPlaceholder" placeholder="Cari daerah atau negara..." autocomplete="off">
+            <button type="submit" class="map-search-button"><i class="bi bi-search" aria-hidden="true"></i><span data-i18n="mapSearchButton">Cari</span></button>
+          </form>
+          <p id="mapStatus" class="map-status" role="status" aria-live="polite" data-i18n="mapSearchPrompt">Cari lokasi untuk melihatnya pada peta.</p>
+          <div id="shippingMap" class="shipping-map" role="region" aria-label="Interactive map" data-i18n-aria-label="mapAriaLabel"></div>
+          <div class="map-attribution-note"><i class="bi bi-geo-alt" aria-hidden="true"></i><span data-i18n="mapOrigin">Lokasi kami: Cirebon, Jawa Barat, Indonesia</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-space" id="faq">
+      <div class="container-xl faq-layout">
+        <div class="faq-intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="faqEyebrow">YANG SERING DITANYAKAN</span></div>
+          <h2 data-i18n="faqTitle">Biar kami<br><em>jelaskan dulu.</em></h2>
+          <p data-i18n="faqDescription">Ada yang belum terjawab? Tim kami dengan senang hati membantu.</p>
+          <a class="text-link" href="#quote"><span data-i18n="faqCta">Hitung estimasi pesanan</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="accordion faq-accordion" id="faqAccordion"></div>
+      </div>
+    </section>
+
+    <section class="closing-banner">
+      <div class="container-xl closing-inner"><div><span data-i18n="closingEyebrow">YANG BERTAHAN LAMA PUNYA CERITA</span><h2 data-i18n="closingTitle">Ajak rotan pulang.</h2></div><a href="#collection" class="button-light"><span data-i18n="closingCta">Temukan milik Anda</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><span class="closing-sun" aria-hidden="true">✳</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-xl">
+      <div class="footer-main">
+        <div class="footer-brand"><a class="brand-lockup" href="#home"><svg class="brand-mark" viewBox="0 0 52 52" role="img" aria-label="Raya Rattan logo"><circle cx="26" cy="26" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 36V16h10c6 0 10 3 10 8 0 4-2 6-6 7l7 5M15 26h11c3 0 5-1 5-3s-2-3-5-3H15M21 36V16m7 20V16m7 20V16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35"/></svg><span class="brand-name">RAYA<span>RATTAN</span></span></a><p data-i18n="footerTagline">Benda baik, dibuat dengan niat baik.<br>Cirebon, Indonesia.</p></div>
+        <div class="footer-links"><span data-i18n="footerExplore">JELAJAHI</span><a href="#collection" data-i18n="navCollection">Koleksi</a><a href="#story" data-i18n="navStory">Cerita kami</a><a href="#shipping" data-i18n="navShipping">Pengiriman</a></div>
+        <div class="footer-links"><span data-i18n="footerHelp">BANTUAN</span><a href="#faq">FAQ</a><a href="#quote" data-i18n="navQuote">Minta penawaran</a><a href="#quote" data-i18n="footerContact">Hubungi tim kami</a></div>
+        <a class="back-top" href="#home" aria-label="Back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+      </div>
+      <div class="footer-bottom"><span>© <span id="currentYear"></span> RAYA RATTAN. <span data-i18n="footerRights">DIBUAT DENGAN HATI.</span></span><span data-i18n="footerOrigin">KERAJINAN ROTAN DARI CIREBON, INDONESIA</span></div>
+    </div>
+  </footer>
+  <dialog class="cart-dialog" id="cartDialog" aria-labelledby="cartDialogTitle">
+    <div class="cart-dialog-head">
+      <div><span class="eyebrow" data-i18n="cartEyebrow">PESANAN ANDA</span><h2 id="cartDialogTitle" data-i18n="cartTitle">Keranjang belanja</h2></div>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Close shopping cart" data-i18n-aria-label="cartCloseLabel"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </div>
+    <p id="cartStatus" class="cart-status" role="status" aria-live="polite"></p>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-dialog-footer">
+      <div class="cart-subtotal"><span data-i18n="cartSubtotal">Subtotal</span><strong id="cartSubtotal">—</strong></div>
+      <p data-i18n="cartShippingNote">Kos penghantaran akan dianggarkan selepas destinasi dipilih.</p>
+      <a class="quote-submit cart-checkout" id="cartCheckout" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="cartCheckout">Tanya pesanan melalui WhatsApp</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+  </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
